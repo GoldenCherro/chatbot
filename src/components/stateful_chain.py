@@ -4,8 +4,11 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 
-vector_store = get_vector_store()
-retriever = get_retriever_chain(get_vector_store())
+file_path = "../../sourceFiles/AIEngineer.pdf"
+web_paths = ("https://www.promtior.ai/service","https://www.promtior.ai/")
+
+vector_store = get_vector_store(file_path, web_paths)
+retriever = get_retriever_chain(vector_store)
 rag_chain = get_rag_chain(retriever)
 
 store = {}

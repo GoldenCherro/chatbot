@@ -1,14 +1,17 @@
 from langgraph.prebuilt import create_react_agent
 from langchain.tools.retriever import create_retriever_tool
-from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
 from langchain import hub
 from langchain_ollama import ChatOllama
 from components.vector_store import get_vector_store
+from langgraph.graph import CompiledGraph
 
-def agent_rag():
+def agent_rag() -> CompiledGraph:
     llm = ChatOllama(model="llama3.1", temperature=0,) 
-    vector_store = get_vector_store()
+    file_path = "../../sourceFiles/AIEngineer.pdf"
+    web_paths = ("https://www.promtior.ai/service","https://www.promtior.ai/")
+    
+    vector_store = get_vector_store(file_path, web_paths)
     retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 6})
     
     memory = MemorySaver()
