@@ -25,6 +25,7 @@ def agent_rag():
 
     return agent_executor
 
+# algún día te voy a usar :(
 
 
 # for event in agent_executor.stream(

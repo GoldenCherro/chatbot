@@ -4,11 +4,15 @@ from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage
 from components.vector_store import get_vector_store
 from api.get_response import get_response
+from components.vector_store import get_vector_store
+from components.chain_rag import get_retriever_chain, get_rag_chain
 
 load_dotenv()
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 vector_store = get_vector_store()
+retriever = get_retriever_chain(get_vector_store())
+rag_chain = get_rag_chain(retriever)
 
 #Streamlit Chatbot
 st.title("💬 Promtior Chatbot")

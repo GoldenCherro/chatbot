@@ -2,7 +2,7 @@ import bs4
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders import PyPDFLoader
 
-file_path = "../sourceFiles/AI Engineer.pdf"
+file_path = "../../sourceFiles/AIEngineer.pdf"
 
 def loaded_data() -> list:
     web_loader = WebBaseLoader(
@@ -12,7 +12,7 @@ def loaded_data() -> list:
         },
         bs_get_text_kwargs={"separator": " ", "strip": True},
     )
-    pdf_loader = PyPDFLoader(file_path)
+    pdf_loader = PyPDFLoader(file_path=file_path)
 
     web_docs = web_loader.load()
 
