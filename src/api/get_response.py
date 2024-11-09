@@ -1,5 +1,5 @@
-from vector_store import get_vector_store
-from chain_rag import get_retriever_chain, get_rag_chain
+from components.vector_store import get_vector_store
+from components.chain_rag import get_retriever_chain, get_rag_chain
 
 def get_response(user_input, session):
     retriever = get_retriever_chain(get_vector_store())

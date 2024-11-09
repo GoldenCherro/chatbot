@@ -1,4 +1,4 @@
-from loader import loaded_data
+from components.loader import loaded_data
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
@@ -10,5 +10,4 @@ def get_vector_store():
     vector_store = InMemoryVectorStore.from_documents(
         documents=splits, embedding = OllamaEmbeddings(model="llama3.1",)
     )
-    # retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 6})
     return vector_store

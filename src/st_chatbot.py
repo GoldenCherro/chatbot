@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage
-from vector_store import get_vector_store
+from components.vector_store import get_vector_store
 from api.get_response import get_response
 
 load_dotenv()
