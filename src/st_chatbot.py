@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage
-from components.vector_store import get_vector_store
+from components.vector_store import VectorStore
 from components.chain_rag import get_retriever_chain, get_rag_chain
 
 load_dotenv()
@@ -11,7 +11,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 file_path = "../sourceFiles/AIEngineer.pdf"
 web_paths = ("https://www.promtior.ai/service","https://www.promtior.ai/")
 
-vector_store = get_vector_store(file_path, web_paths)
+vector_store = VectorStore(file_path, web_paths).get_vector_store()
 retriever = get_retriever_chain(vector_store)
 rag_chain = get_rag_chain(retriever)
 
