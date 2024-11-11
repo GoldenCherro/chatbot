@@ -3,8 +3,6 @@ import bs4
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders import PyPDFLoader
 
-
-
 def loaded_data(file_path: str, web_paths: Sequence[str]) -> list:
     web_loader = WebBaseLoader(
         web_paths = web_paths,
