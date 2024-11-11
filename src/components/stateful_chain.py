@@ -5,7 +5,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_ollama import ChatOllama
 
-file_path = "../../sourceFiles/AIEngineer.pdf"
+file_path = "sourceFiles/AIEngineer.pdf"
 web_paths = ("https://www.promtior.ai/service","https://www.promtior.ai/")
 llm = ChatOllama(model="llama3.1", temperature=0,)
 

@@ -9,7 +9,7 @@ from langchain_ollama import ChatOllama
 load_dotenv()
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
-file_path = "../sourceFiles/AIEngineer.pdf"
+file_path = "sourceFiles/AIEngineer.pdf"
 web_paths = ("https://www.promtior.ai/service","https://www.promtior.ai/")
 llm = ChatOllama(model="llama3.1", temperature=0,)
 
