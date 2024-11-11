@@ -1,0 +1,13 @@
+# railway.toml
+[service]
+name = "my-fastapi-service"
+
+# Comando de instalación para usar Poetry en lugar de pip
+install_command = "poetry install"
+
+# Comando de inicio para FastAPI usando uvicorn
+start_command = "fastapi run src/api/server.py"
+
+# Especifica la versión de Python (opcional)
+[env]
+PYTHON_VERSION = "3.12"
